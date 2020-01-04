@@ -1,0 +1,165 @@
+homeassistant: true
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://127.0.0.1'
+  user: !secret user
+  password: !secret password
+advanced:
+  log_directory: data/log/
+  last_seen: epoch
+  report: false
+serial:
+  port: /dev/ttyS0
+devices:
+#lights
+  '0x90fd9ffffe1fd010':
+    friendly_name: Guest Room
+    retain: false
+    qos: 2
+  '0x000b57fffe9a4b1c':
+    friendly_name: Front Door Light
+    retain: false
+    qos: 2
+  '0x000b57fffeea635c':
+    friendly_name: Kitchen Light
+    retain: false
+    qos: 2
+    debounce: 1
+  '0x001788010347a11c':
+    friendly_name: Living Room 3
+    retain: false
+    qos: 2
+  '0x0017880103538d4c':
+    friendly_name: Dining Table
+    retain: false
+    qos: 2
+  '0x00178801032054fb':
+    friendly_name: Corner 2
+    retain: false
+    qos: 2
+  '0x0017880103224b35':
+    friendly_name: Corner
+    retain: false
+    qos: 2
+  '0x00124b001d43d4f9':
+    friendly_name: DIYgne_1
+    retain: false
+    qos: 2
+  '0x000d6ffffe5b22fc':
+    friendly_name: Ikea Vintage Bulb
+    retain: false
+    qos: 2
+  '0x0017880103f48526':
+    friendly_name: Master Bedroom Strip
+    retain: false
+    qos: 2
+  '0x00124b001d439fe3':
+    friendly_name: TV Backlight
+    retain: false
+    qos: 2
+  '0x00124b001d84d298':
+    friendly_name: Kitchen LEDs
+    retain: false
+    qos: 2
+  '0x90fd9ffffed7232e':
+    friendly_name: Stairs
+    retain: false
+    qos: 2
+#control switches
+  '0x00158d00028f8a46':
+    friendly_name: Xiaomi Double Switch
+    retain: false
+  '0x00158d0002c4410b':
+    friendly_name: Mi Button Switch
+    retain: false
+  '0x0017880102c39056':
+    friendly_name: Philips Dimmer Switch
+    retain: false
+    debounce: 0.25
+  '0x00158d00033a7d80':
+    friendly_name: Office Switch
+    retain: false
+  '0x000b57fffec49812':
+    friendly_name: Ikea Kitchen Remote Control
+    retain: false
+  '0x90fd9ffffe4c6b3f':
+    friendly_name: Ikea Guestroom Remote Control
+    retain: false
+#switched outlets
+  '0x000d6ffffeda13c5':
+    friendly_name: Prusa Switch
+    retain: true
+    qos: 2
+  '0x84182600000d022c':
+    friendly_name: Garden Lights
+    retain: false
+    qos: 2
+#temp/humidity sensors
+  '0x00158d0002b94edd':
+    friendly_name: Temp/Humidity Sensor Bathroom
+    retain: false
+  '0x00158d000391d08c':
+    friendly_name: Filament Box
+    retain: false
+  '0x00158d0003a5b561':
+    friendly_name: Master Bedroom Temp
+    retain: false
+  '0x00158d0003cbbd93':
+    friendly_name: Laundry Temp
+    retain: false
+#motion sensors
+  '0x00158d000257a78d':
+    friendly_name: Stairs Motion 2
+    retain: false
+    occupancy_timeout: 15
+    qos: 2
+  '0x00158d0001d92214':
+    friendly_name: Stairs Motion 1
+    retain: false
+    occupancy_timeout: 15
+    qos: 2
+  '0x00158d0002ec7dc1':
+    friendly_name: Living Room Presence
+    retain: false
+    occupancy_timeout: 600
+    qos: 2
+#contact sensors
+  '0x00158d0001e74d14':
+    friendly_name: Living Room Door
+    retain: false
+  '0x00158d0001e74d00':
+    friendly_name: Office Window
+    retain: false
+  '0x00158d0001e74c29':
+    friendly_name: Laundry Window
+    retain: false
+  '0x00158d0002913848':
+    friendly_name: Storage Window
+    retain: false
+  '0x00158d00029139a2':
+    friendly_name: Guest Room 1
+    retain: false
+  '0x00158d0002a1382e':
+    friendly_name: Guest Room 2
+    retain: false
+  '0x00158d000291327d':
+    friendly_name: Master Bedroom 1
+    retain: false
+  '0x00158d0001e74c18':
+    friendly_name: Kitchen Window
+    retain: false
+  '0x00158d0001e74d0a':
+    friendly_name: Front Door
+    retain: false
+  '0x00158d0002a1360b':
+    friendly_name: Master Bedroom 2
+    retain: false
+  '0x00158d00029b6ad0':
+    friendly_name: Back Shed Door
+    retain: false
+#zigbee routers
+  '0x00124b001202338e':
+    friendly_name: 2531 Router
+  '0x00124b001b7b166b':
+    friendly_name: 2530 Router
